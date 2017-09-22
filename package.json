@@ -52,7 +52,9 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "devDependencies": {
+    "material-ui": "^0.19.2",
     "node-sass": "^4.5.3",
+    "react-promise": "^1.2.1",
     "sass-loader": "^6.0.6"
   },
   "jest": {
