@@ -1,16 +1,26 @@
 import React, { Component } from 'react'
 import TextField from 'material-ui/TextField'
-import RottenTomatoesStore from 'stores/RottenTomatoesStore'
+import { MovieStore } from 'stores'
 
 import './styles/MovieContainer.scss'
 
 export default class MovieContainer extends Component {
   state = {
-    movieTitle: ''
+    movieTitle: '',
+    movieArray: null
   }
 
   handleChangeText = e => {
     this.setState({ movieTitle: e.target.value })
+  }
+
+  handleFindMovie = () => {
+    const { movieTitle } = this.state
+    //MovieStore.getRottenTomatoesMovie()
+    MovieStore.getTMBDMovie(movieTitle)
+    // .then(data => {
+    //   console.log(data)
+    // })
   }
 
   render() {
@@ -23,11 +33,12 @@ export default class MovieContainer extends Component {
         </div>
         <div id="MovieContainerSearch">
           <TextField
+            style={{ width: '80%' }}
             floatingLabelText="Enter Movie:"
             onChange={this.handleChangeText}
             value={movieTitle}
           />
-          <button onClick={RottenTomatoesStore.getMovieRating} />
+          <button onClick={this.handleFindMovie}>Find Movie Stats!</button>
         </div>
       </div>
     )
