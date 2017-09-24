@@ -10,6 +10,7 @@
 
   h2 {
     margin: 0;
+    color: $INDIGO_BLUE;
   }
 
   .Movie-Poster {
@@ -35,6 +36,10 @@
     align-items: center;
     padding-top: 10px;
     width: 100%;
+
+    p {
+      color: $PINK_RED;
+    }
 
     .MovieRatingBox {
       display: flex;

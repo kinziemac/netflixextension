@@ -53,16 +53,16 @@ export default class MovieContainer extends Component {
         <div id="MovieContainerSearch">
           <div id="MovieHeader">
             <img src={MovieIcon} alt="movie" />
-            <p>Search</p>
+            <p>FlixFinder</p>
           </div>
           <TextField
-            style={{ width: '80%' }}
+            style={{ width: '80%', color: 'white' }}
             floatingLabelText="Enter Movie:"
             onChange={this.handleChangeText}
             value={movieTitle}
           />
           <div id="MovieButton" onClick={this.handleFindMovie}>
-            Find Movie
+            <p>Find Movie</p>
           </div>
         </div>
         {loading ? (

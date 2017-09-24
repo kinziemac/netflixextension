@@ -38,15 +38,14 @@
   flex-direction: column;
   justify-content: flex-start;
   overflow-y: scroll;
-  max-height: 400px; }
+  max-height: 400px;
+  background: linear-gradient(135deg, red, blue); }
   #MovieContainer p {
     font-family: Roboto;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     margin: 0; }
-  #MovieContainer h2 {
-    color: #832161; }
   #MovieContainer #MovieContainerSearch {
     display: flex;
     flex-direction: column;
@@ -65,7 +64,7 @@
       #MovieContainer #MovieContainerSearch #MovieHeader p {
         font-size: 2em;
         font-family: Lucida Console;
-        color: #832161;
+        color: #00bcd4;
         margin: 10px 0;
         padding-left: 10px; }
       #MovieContainer #MovieContainerSearch #MovieHeader img {
@@ -110,4 +109,4 @@
   overflow-y: scroll;
   /* Added body dimensions */ }
 body{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:start;justify-content:flex-start;height:400px;width:350px}
-/*# sourceMappingURL=main.52658e37.css.map*/
+/*# sourceMappingURL=main.16790d81.css.map*/
