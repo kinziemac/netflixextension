@@ -1,11 +1,14 @@
+@import 'src/styles/variables.scss';
+
 .Movie-Info-Box-Container {
   display: flex;
   flex-direction: row;
   align-items: center;
   box-shadow: 0 3px 5px #888888;
   padding-top: 10px;
+  height: 100%;
 
-  h3 {
+  h2 {
     margin: 0;
   }
 
@@ -25,8 +28,23 @@
     width: 100%;
   }
 
-  .Movie-Score {
+  .MovieRatingContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     padding-top: 10px;
-    margin: 0;
+    width: 100%;
+
+    .MovieRatingBox {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .Movie-Score {
+        margin: 0;
+      }
+    }
   }
 }

@@ -1,3 +1,5 @@
+@import 'src/styles/variables.scss';
+
 #MovieContainer {
   display: flex;
   flex-direction: column;
@@ -6,6 +8,7 @@
   max-height: 400px;
 
   p {
+    font-family: Roboto;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -13,11 +16,7 @@
   }
 
   h2 {
-    color: #00bcd4;
-  }
-
-  #MovieContainerHeader {
-    color: #00bcd4;
+    color: $RASBERRY_RED;
   }
 
   #MovieContainerSearch {
@@ -25,32 +24,61 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 204px;
+    min-height: 211px;
     border-bottom-style: solid;
-    border-color: #c9c9c9;
+    border-color: $LIGHT_GRAY;
     border-width: 1px;
+    padding: 15px 0;
 
-    #Movie-Button {
+    #MovieHeader {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-end;
+
+      p {
+        font-size: 2em;
+        font-family: Lucida Console;
+        color: $RASBERRY_RED;
+        margin: 10px 0;
+        padding-left: 10px;
+      }
+
+      img {
+        width: 75px;
+        height: 75px;
+      }
+    }
+
+    #MovieButton {
       cursor: pointer;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
       margin-top: 20px;
-      width: 100px;
+      width: 120px;
       height: 25px;
-      background-color: #00bcd4;
+      border-radius: 4px;
+      background-color: $INDIGO_BLUE;
       color: white;
-      border-radius: 20px;
-    }
+      transition: all 0.7s ease 0s;
 
-    #Movie-Button:hover {
-      background-color: rgba(0, 0, 0, 1);
+      &:hover {
+        background-color: $RASBERRY_RED;
+      }
     }
   }
 
-  #Movie-Info-List {
-    padding-top: 20px;
+  #MovieLoading {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  #MovieInfoList {
   }
 }
 

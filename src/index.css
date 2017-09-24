@@ -2,12 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /*border-style: solid;
-  border-radius: 1px;
-  border-width: 1px;*/
-  overflow-y: scroll;
-  /* Added body dimensions */
+
   height: 400px;
-  max-height: 400px;
   width: 350px;
 }

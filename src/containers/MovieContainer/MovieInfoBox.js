@@ -26,12 +26,23 @@ export default class MovieInfoBox extends Component {
           alt="movie poster"
         />
         <div className="Movie-Info">
-          <h3>{`${movie.title} (${this.handleGetYear(
+          <h2>{`${movie.title} (${this.handleGetYear(
             movie.release_date
-          )})`}</h3>
-          <h2 className="Movie-Score">
-            {movie.vote_average === 0 ? 'No Rating' : movie.vote_average}
-          </h2>
+          )})`}</h2>
+          <div className="MovieRatingContainer">
+            <div className="MovieRatingBox">
+              <p>TMDB:</p>
+              <h2 className="Movie-Score">
+                {movie.vote_average === 0 ? 'N/A' : movie.vote_average}
+              </h2>
+            </div>
+            <div className="MovieRatingBox">
+              <p>IMDB:</p>
+              <h2 className="Movie-Score">
+                {movie.imdb_rating ? movie.imdb_rating : 'N/A'}
+              </h2>
+            </div>
+          </div>
         </div>
       </div>
     )

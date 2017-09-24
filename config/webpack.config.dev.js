@@ -12,6 +12,7 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin')
 const getClientEnvironment = require('./env')
 const paths = require('./paths')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const glob = require('glob')
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -22,6 +23,22 @@ const publicPath = '/'
 const publicUrl = ''
 // Get environment variables to inject into our app.
 const env = getClientEnvironment(publicUrl)
+
+const CSS_LOADER_CONFIG = [
+  {
+    loader: 'css-loader',
+    options: {
+      sourceMap: true
+    }
+  },
+  {
+    loader: 'sass-loader',
+    options: {
+      sourceMap: true,
+      includePaths: glob.sync('src').map(d => path.join(__dirname, d))
+    }
+  }
+]
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
@@ -154,7 +171,10 @@ module.exports = {
           {
             test: /\.scss$/,
             include: paths.appSrc,
-            loaders: ['style-loader', 'css-loader', 'sass-loader']
+            use: ExtractTextPlugin.extract({
+              fallback: 'style-loader',
+              use: CSS_LOADER_CONFIG
+            })
           },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.

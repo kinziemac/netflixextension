@@ -11,8 +11,7 @@ export const SourceStore = {
     apiKey: '9htuhtcb4ymusd73d4z6jxcj'
   },
   IMDB: {
-    apiLink:
-      'http://www.theimdbapi.org/api/find/movie?title=the+lord+of+the+rings',
+    apiLink: 'http://www.theimdbapi.org/api/find/movie?title=',
     apiKey: ''
   }
 }

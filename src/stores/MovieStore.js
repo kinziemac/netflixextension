@@ -1,14 +1,16 @@
 import { SourceStore } from './SourceStore'
 
 class MovieStore {
+  TMDBList = []
+  IMDBList = []
+
   getIMDBMovie(title) {
     return new Promise((resolve, reject) => {
-      fetch(SourceStore.IMDB.apiLink)
+      fetch(SourceStore.IMDB.apiLink + title)
         .then(results => {
           return results.json()
         })
         .then(data => {
-          console.log(data)
           resolve(data)
         })
         .catch(err => {
@@ -17,31 +19,68 @@ class MovieStore {
     })
   }
 
-  getTMBDMovie(movieTitle) {
+  getTMDBMovie(title) {
     return new Promise((resolve, reject) => {
-      fetch(`${SourceStore.TMBD.apiLink + movieTitle}`)
+      fetch(`${SourceStore.TMBD.apiLink + title}`)
         .then(results => {
           return results.json()
         })
         .then(data => {
-          console.log(data)
           resolve(data)
         })
     })
   }
 
-  getRottenTomatoesMovie() {
+  getMovies(title) {
+    const lowerCaseTitle = title.toLowerCase()
+
     return new Promise((resolve, reject) => {
-      fetch(SourceStore.IMDB.apiLink)
-        .then(results => {
-          return results.json()
+      this.getTMDBMovie(lowerCaseTitle).then(TMDBdata => {
+        this.TMDBList = TMDBdata.results
+        this.getIMDBMovie(lowerCaseTitle).then(IMDBdata => {
+          this.IMDBList = IMDBdata
+          if (this.TMDBList) {
+            this.formatMovies().then(() => {
+              resolve(this.TMDBList)
+            })
+          } else {
+            reject()
+          }
         })
-        .then(data => {
-          console.log(data)
-          resolve(data)
-        })
+      })
     })
   }
+
+  //
+  // TMBDList = []
+  // IMDBList = []
+
+  formatMovies() {
+    return new Promise((resolve, reject) => {
+      this.TMDBList.forEach(TMDBMovie => {
+        this.IMDBList.forEach(IMDBMovie => {
+          if (TMDBMovie.title === IMDBMovie.title) {
+            TMDBMovie.imdb_rating = IMDBMovie.rating
+          }
+        })
+      })
+
+      resolve()
+    })
+  }
+
+  // getRottenTomatoesMovie(title) {
+  //   return new Promise((resolve, reject) => {
+  //     fetch(`SourceStore.IMDB.apiLink${title}`)
+  //       .then(results => {
+  //         return results.json()
+  //       })
+  //       .then(data => {
+  //         console.log(data)
+  //         resolve(data)
+  //       })
+  //   })
+  // }
 }
 
 const movieStore = new MovieStore()
