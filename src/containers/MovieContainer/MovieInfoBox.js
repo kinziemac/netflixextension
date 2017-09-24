@@ -25,8 +25,14 @@ export default class MovieInfoBox extends Component {
           src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
           alt="movie poster"
         />
-        <p>{`${movie.title} (${this.handleGetYear(movie.release_date)})`}</p>
-        <p className="Movie-Score">{movie.vote_average}</p>
+        <div className="Movie-Info">
+          <h3>{`${movie.title} (${this.handleGetYear(
+            movie.release_date
+          )})`}</h3>
+          <h2 className="Movie-Score">
+            {movie.vote_average === 0 ? 'No Rating' : movie.vote_average}
+          </h2>
+        </div>
       </div>
     )
   }

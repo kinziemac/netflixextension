@@ -40,9 +40,11 @@ export default class MovieContainer extends Component {
             onChange={this.handleChangeText}
             value={movieTitle}
           />
-          <button onClick={this.handleFindMovie}>Find Movie Stats!</button>
+          <div id="Movie-Button" onClick={this.handleFindMovie}>
+            Find Movie
+          </div>
         </div>
-        <div>
+        <div id="Movie-Info-List">
           {movieList.map(movie => {
             return <MovieInfoBox key={movie.id} movie={movie} />
           })}
