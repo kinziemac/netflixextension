@@ -1,4 +1,15 @@
 #MovieContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  p {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0;
+  }
+
   #MovieContainerHeader {
     color: #00bcd4;
   }
@@ -7,6 +18,14 @@
     button {
       margin-top: 20px;
     }
+  }
+
+  .movie-fields {
+    border-style: solid;
+    border-color: red;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
   }
 }
 

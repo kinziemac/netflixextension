@@ -7,7 +7,7 @@ import './styles/MovieContainer.scss'
 export default class MovieContainer extends Component {
   state = {
     movieTitle: '',
-    movieArray: null
+    movieList: []
   }
 
   handleChangeText = e => {
@@ -17,14 +17,15 @@ export default class MovieContainer extends Component {
   handleFindMovie = () => {
     const { movieTitle } = this.state
     //MovieStore.getRottenTomatoesMovie()
-    MovieStore.getTMBDMovie(movieTitle)
-    // .then(data => {
-    //   console.log(data)
-    // })
+    MovieStore.getTMBDMovie(movieTitle).then(data => {
+      if (!data.errors) {
+        this.setState({ movieList: data.results })
+      }
+    })
   }
 
   render() {
-    const { movieTitle } = this.state
+    const { movieTitle, movieList } = this.state
 
     return (
       <div id="MovieContainer">
@@ -39,6 +40,17 @@ export default class MovieContainer extends Component {
             value={movieTitle}
           />
           <button onClick={this.handleFindMovie}>Find Movie Stats!</button>
+        </div>
+        <div>
+          {movieList.map(movie => {
+            return (
+              <div className="movie-fields" key={movie.id}>
+                <p>Title: {movie.title}</p>
+                <p>Release date: {movie.release_date}</p>
+                <p>Movie score: {movie.vote_average}</p>
+              </div>
+            )
+          })}
         </div>
       </div>
     )

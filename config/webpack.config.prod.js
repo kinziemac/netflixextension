@@ -148,6 +148,14 @@ module.exports = {
               compact: true
             }
           },
+          {
+            test: /\.scss$/,
+            use: ExtractTextPlugin.extract({
+              fallback: 'style-loader',
+              //resolve-url-loader may be chained before sass-loader if necessary
+              use: ['css-loader', 'sass-loader']
+            })
+          },
           // The notation here is somewhat confusing.
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
@@ -274,6 +282,7 @@ module.exports = {
     new ExtractTextPlugin({
       filename: cssFilename
     }),
+    new ExtractTextPlugin('style.css'),
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without
     // having to parse `index.html`.
