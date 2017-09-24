@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TextField from 'material-ui/TextField'
 import { MovieStore } from 'stores'
+import { MovieInfoBox } from 'containers/MovieContainer'
 
 import './styles/MovieContainer.scss'
 
@@ -43,13 +44,7 @@ export default class MovieContainer extends Component {
         </div>
         <div>
           {movieList.map(movie => {
-            return (
-              <div className="movie-fields" key={movie.id}>
-                <p>Title: {movie.title}</p>
-                <p>Release date: {movie.release_date}</p>
-                <p>Movie score: {movie.vote_average}</p>
-              </div>
-            )
+            return <MovieInfoBox key={movie.id} movie={movie} />
           })}
         </div>
       </div>
