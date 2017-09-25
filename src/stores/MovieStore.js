@@ -37,16 +37,18 @@ class MovieStore {
     return new Promise((resolve, reject) => {
       this.getTMDBMovie(lowerCaseTitle).then(TMDBdata => {
         this.TMDBList = TMDBdata.results
-        this.getIMDBMovie(lowerCaseTitle).then(IMDBdata => {
-          this.IMDBList = IMDBdata
-          if (this.TMDBList) {
-            this.formatMovies().then(() => {
-              resolve(this.TMDBList)
-            })
-          } else {
-            reject()
-          }
-        })
+        console.log(this.TMDBList)
+        //this.getIMDBMovie(lowerCaseTitle).then(IMDBdata => {
+        // console.log(IMDBdata)
+        // this.IMDBList = IMDBdata
+        // if (this.TMDBList) {
+        //   this.formatMovies().then(() => {
+        resolve(this.TMDBList)
+        //   })
+        // } else {
+        //   reject()
+        // }
+        //})
       })
     })
   }

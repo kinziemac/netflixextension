@@ -29,7 +29,6 @@ export default class MovieContainer extends Component {
       var distanceY = window.pageYOffset || document.documentElement.scrollTop,
         shrinkOn = 20
       if (distanceY > shrinkOn) {
-        console.log('shrinking')
         this.setState({ scroll: true })
       } else {
         if (this.state.scroll) {

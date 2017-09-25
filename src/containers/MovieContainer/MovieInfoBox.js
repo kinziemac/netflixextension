@@ -9,7 +9,8 @@ export default class MovieInfoBox extends Component {
   }
 
   handleGetYear(date) {
-    if (date !== '') {
+    if (date && date !== '') {
+      console.log('this is date: ', date)
       return date.match(/^(.*?)-/)[1]
     }
     return 'unknown'
@@ -17,6 +18,8 @@ export default class MovieInfoBox extends Component {
 
   render() {
     const { movie } = this.props
+    const date = movie.release_date ? movie.release_date : movie.first_air_date
+    const name = movie.title ? movie.title : movie.original_name
 
     return (
       <div className="Movie-Info-Box-Container" key={movie.id}>
@@ -26,9 +29,7 @@ export default class MovieInfoBox extends Component {
           alt="movie poster"
         />
         <div className="Movie-Info">
-          <h2>{`${movie.title} (${this.handleGetYear(
-            movie.release_date
-          )})`}</h2>
+          <h2>{`${name} (${this.handleGetYear(date)})`}</h2>
           <div className="MovieRatingContainer">
             <div className="MovieRatingBox">
               <p>TMDB:</p>
