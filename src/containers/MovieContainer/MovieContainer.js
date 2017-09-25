@@ -12,7 +12,8 @@ export default class MovieContainer extends Component {
     movieTitle: '',
     movieList: [],
     loading: false,
-    error: ''
+    error: '',
+    scroll: false
   }
 
   constructor(props) {
@@ -21,6 +22,19 @@ export default class MovieContainer extends Component {
     window.addEventListener('keydown', event => {
       if (event.key === 'Enter') {
         this.handleFindMovie()
+      }
+    })
+
+    window.addEventListener('scroll', event => {
+      var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+        shrinkOn = 20
+      if (distanceY > shrinkOn) {
+        console.log('shrinking')
+        this.setState({ scroll: true })
+      } else {
+        if (this.state.scroll) {
+          this.setState({ scroll: false })
+        }
       }
     })
   }
@@ -46,23 +60,25 @@ export default class MovieContainer extends Component {
   }
 
   render() {
-    const { movieTitle, movieList, loading } = this.state
+    const { movieTitle, movieList, loading, scroll } = this.state
 
     return (
       <div id="MovieContainer">
         <div id="MovieContainerSearch">
-          <div id="MovieHeader">
+          <div id="MovieHeader" className={scroll ? 'scroll' : ''}>
             <img src={MovieIcon} alt="movie" />
             <p>FlixFinder</p>
           </div>
-          <TextField
-            style={{ width: '80%', color: 'white' }}
-            floatingLabelText="Enter Movie:"
-            onChange={this.handleChangeText}
-            value={movieTitle}
-          />
-          <div id="MovieButton" onClick={this.handleFindMovie}>
-            <p>Find Movie</p>
+          <div id="MovieInputs" className={scroll ? 'scroll' : ''}>
+            <TextField
+              style={{ width: '80%', color: 'white' }}
+              floatingLabelText="Enter Movie:"
+              onChange={this.handleChangeText}
+              value={movieTitle}
+            />
+            <div id="MovieButton" onClick={this.handleFindMovie}>
+              <p>Find Movie</p>
+            </div>
           </div>
         </div>
         {loading ? (

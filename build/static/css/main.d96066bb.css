@@ -6,7 +6,8 @@
   padding-top: 10px;
   height: 100%; }
   .Movie-Info-Box-Container h2 {
-    margin: 0; }
+    margin: 0;
+    color: #440381; }
   .Movie-Info-Box-Container .Movie-Poster {
     width: 100px;
     min-width: 100px;
@@ -26,6 +27,8 @@
     align-items: center;
     padding-top: 10px;
     width: 100%; }
+    .Movie-Info-Box-Container .MovieRatingContainer p {
+      color: #da4167; }
     .Movie-Info-Box-Container .MovieRatingContainer .MovieRatingBox {
       display: flex;
       flex-direction: column;
@@ -38,8 +41,8 @@
   flex-direction: column;
   justify-content: flex-start;
   overflow-y: scroll;
-  max-height: 400px;
-  background: linear-gradient(135deg, red, blue); }
+  height: 400px;
+  background: linear-gradient(135deg, #e8d7f1, white); }
   #MovieContainer p {
     font-family: Roboto;
     display: flex;
@@ -64,7 +67,7 @@
       #MovieContainer #MovieContainerSearch #MovieHeader p {
         font-size: 2em;
         font-family: Lucida Console;
-        color: #00bcd4;
+        color: #440381;
         margin: 10px 0;
         padding-left: 10px; }
       #MovieContainer #MovieContainerSearch #MovieHeader img {
@@ -77,7 +80,7 @@
       justify-content: center;
       align-items: center;
       margin-top: 20px;
-      width: 120px;
+      width: 150px;
       height: 25px;
       border-radius: 4px;
       background-color: #440381;
@@ -85,6 +88,9 @@
       transition: all 0.7s ease 0s; }
       #MovieContainer #MovieContainerSearch #MovieButton:hover {
         background-color: #832161; }
+      #MovieContainer #MovieContainerSearch #MovieButton p {
+        color: white;
+        font-family: sans-serif; }
   #MovieContainer #MovieLoading {
     display: flex;
     flex-direction: row;
@@ -108,5 +114,7 @@
   font-family: sans-serif;
   overflow-y: scroll;
   /* Added body dimensions */ }
+  .App p {
+    font-family: sans-serif; }
 body{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:start;justify-content:flex-start;height:400px;width:350px}
-/*# sourceMappingURL=main.16790d81.css.map*/
+/*# sourceMappingURL=main.d96066bb.css.map*/
