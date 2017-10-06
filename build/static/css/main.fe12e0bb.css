@@ -41,8 +41,8 @@
   flex-direction: column;
   justify-content: flex-start;
   overflow-y: scroll;
-  height: 400px;
-  background: linear-gradient(135deg, #e8d7f1, white); }
+  background: linear-gradient(135deg, #e8d7f1, white);
+  max-width: 350px; }
   #MovieContainer p {
     font-family: Roboto;
     display: flex;
@@ -54,25 +54,46 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 211px;
     border-bottom-style: solid;
     border-color: #c9c9c9;
+    width: 100%;
+    max-width: 350px;
     border-width: 1px;
-    padding: 15px 0; }
+    padding: 15px 0;
+    box-shadow: 0 3px 5px #888888; }
+    #MovieContainer #MovieContainerSearch #MovieInputs {
+      height: 120px;
+      transition: height 1s, opacity 0.3s; }
     #MovieContainer #MovieContainerSearch #MovieHeader {
       display: flex;
       flex-direction: row;
       justify-content: center;
-      align-items: flex-end; }
+      align-items: flex-end;
+      height: 100px;
+      transition: height 0.6s, opacity 0.3s; }
       #MovieContainer #MovieContainerSearch #MovieHeader p {
         font-size: 2em;
         font-family: Lucida Console;
         color: #440381;
         margin: 10px 0;
-        padding-left: 10px; }
+        padding-left: 10px;
+        transition: height 0.6s, width 0.6s; }
       #MovieContainer #MovieContainerSearch #MovieHeader img {
         width: 75px;
-        height: 75px; }
+        height: 75px;
+        transition: height 0.6s, width 0.6s; }
+    #MovieContainer #MovieContainerSearch #MovieHeader .scroll {
+      transition: height 1s, opacity 0.3s;
+      height: 70px; }
+      #MovieContainer #MovieContainerSearch #MovieHeader .scroll img {
+        width: 55px;
+        height: 55px; }
+      #MovieContainer #MovieContainerSearch #MovieHeader .scroll p {
+        font-size: 1.5em; }
+    #MovieContainer #MovieContainerSearch #MovieInputs .scroll {
+      transition: height 2s, opacity 0.5s;
+      opacity: 0;
+      height: 0; }
     #MovieContainer #MovieContainerSearch #MovieButton {
       cursor: pointer;
       display: flex;
@@ -117,4 +138,4 @@
   .App p {
     font-family: sans-serif; }
 body{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:start;justify-content:flex-start;height:400px;width:350px}
-/*# sourceMappingURL=main.d96066bb.css.map*/
+/*# sourceMappingURL=main.fe12e0bb.css.map*/
