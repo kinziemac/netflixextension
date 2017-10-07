@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import TextField from 'material-ui/TextField'
 import { MovieStore } from 'stores'
 import { MovieInfoBox } from 'containers/MovieContainer'
-import MovieIcon from 'images/Movie-Icon.png'
+import FlixFinderTitle from 'images/FlixFinderTitle.png'
 import CircularProgress from 'material-ui/CircularProgress'
 
 import './styles/MovieContainer.scss'
@@ -65,18 +65,20 @@ export default class MovieContainer extends Component {
       <div id="MovieContainer">
         <div id="MovieContainerSearch">
           <div id="MovieHeader" className={scroll ? 'scroll' : ''}>
-            <img src={MovieIcon} alt="movie" />
-            <p>FlixFinder</p>
+            <img src={FlixFinderTitle} alt="Credit: LogoMakr.com" />
           </div>
           <div id="MovieInputs" className={scroll ? 'scroll' : ''}>
             <TextField
-              style={{ width: '80%', color: 'white' }}
+              style={textColours.style}
+              underlineFocusStyle={textColours.underlineFocusStyle}
+              floatingLabelFocusStyle={textColours.floatingLabelFocusStyle}
               floatingLabelText="Enter Movie:"
               onChange={this.handleChangeText}
               value={movieTitle}
+              inputStyle={textColours.inputStyle}
             />
             <div id="MovieButton" onClick={this.handleFindMovie}>
-              <p>Find Movie</p>
+              <p>Search</p>
             </div>
           </div>
         </div>
@@ -94,4 +96,21 @@ export default class MovieContainer extends Component {
       </div>
     )
   }
+}
+
+const textColours = {
+  underlineStyle: {
+    borderColor: 'white'
+  },
+  underlineFocusStyle: {
+    borderColor: '#440381'
+  },
+  floatingLabelStyle: {
+    color: 'white'
+  },
+  floatingLabelFocusStyle: {
+    color: '#440381'
+  },
+  style: { color: 'white', width: '80%' },
+  inputStyle: { color: 'white' }
 }

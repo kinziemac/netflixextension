@@ -4,7 +4,9 @@
   padding: 0;
   font-family: sans-serif;
   overflow-y: scroll;
-  //background: linear-gradient(135deg, red, blue);
+  min-height: 450px;
+  max-height: 450px;
+  background: linear-gradient(180deg, #651fff, #b388ff);
 
   p {
     font-family: sans-serif;

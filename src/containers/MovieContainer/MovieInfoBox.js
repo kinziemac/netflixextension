@@ -37,12 +37,6 @@ export default class MovieInfoBox extends Component {
                 {movie.vote_average === 0 ? 'N/A' : movie.vote_average}
               </h2>
             </div>
-            <div className="MovieRatingBox">
-              <p>IMDB:</p>
-              <h2 className="Movie-Score">
-                {movie.imdb_rating ? movie.imdb_rating : 'N/A'}
-              </h2>
-            </div>
           </div>
         </div>
       </div>

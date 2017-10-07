@@ -1,16 +1,24 @@
 @import 'src/styles/variables.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 .Movie-Info-Box-Container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  box-shadow: 0 3px 5px #888888;
-  padding-top: 10px;
-  height: 100%;
+  padding: 10px;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: white;
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   h2 {
     margin: 0;
-    color: $INDIGO_BLUE;
+    color: linear-gradient(180deg, #311b92, #b388ff);
   }
 
   .Movie-Poster {
@@ -38,7 +46,10 @@
     width: 100%;
 
     p {
-      color: $PINK_RED;
+      font-size: 1.3em;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      color: #1de9b6;
     }
 
     .MovieRatingBox {
