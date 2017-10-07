@@ -12,7 +12,7 @@
   .Movie-Info-Box-Container a {
     transition: all 0.3s ease 0s; }
     .Movie-Info-Box-Container a:hover {
-      color: #d81b60; }
+      color: #ad1457; }
   .Movie-Info-Box-Container h2 {
     margin: 0;
     color: linear-gradient(180deg, #311b92, #b388ff); }
@@ -166,4 +166,4 @@
   .App p {
     font-family: sans-serif; }
 body{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:start;justify-content:flex-start;overflow-y:scroll;max-height:400px;width:350px;margin:0;padding:0}
-/*# sourceMappingURL=main.e956408f.css.map*/
+/*# sourceMappingURL=main.233e0862.css.map*/
