@@ -72,7 +72,7 @@
     border-bottom-width: 1px;
     border-bottom-color: white;
     margin-bottom: 10px;
-    animation: border-fade-in 2s; }
+    animation: border-fade-in 1.6s; }
     #MovieContainer #MovieContainerSearch #MovieHeader {
       display: flex;
       flex-direction: row;
@@ -86,7 +86,7 @@
         height: 60px; }
     #MovieContainer #MovieContainerSearch #MovieInputs {
       height: 120px;
-      animation: fade-in-two 2s; }
+      animation: fade-in-two 1.6s; }
     #MovieContainer #MovieContainerSearch #MovieButton {
       cursor: pointer;
       display: flex;
@@ -125,7 +125,7 @@
 @keyframes fade-in {
   0% {
     opacity: 0; }
-  40% {
+  55% {
     opacity: 1;
     transform: scale(1.15); }
   100% {
