@@ -53,6 +53,31 @@ class MovieStore {
     })
   }
 
+  //TODO: I have no idea if this works but it should work
+  getMedia(id, type) {
+    let mediaType = 'movie'
+    switch (type) {
+      case 'tv':
+        mediaType = 'tv'
+        break
+      default:
+        break
+    }
+
+    return new Promise((resolve, reject) => {
+      fetch(
+        `https://api.themoviedb.org/3/${mediaType}/${id}?api_key=${SourceStore
+          .TMDB.apiKey}&language=en-US`
+      )
+        .then(results => {
+          return results.json()
+        })
+        .then(data => {
+          console.log(data)
+        })
+    })
+  }
+
   //
   // TMBDList = []
   // IMDBList = []

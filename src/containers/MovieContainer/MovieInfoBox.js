@@ -10,7 +10,6 @@ export default class MovieInfoBox extends Component {
 
   handleGetYear(date) {
     if (date && date !== '') {
-      console.log('this is date: ', date)
       return date.match(/^(.*?)-/)[1]
     }
     return 'unknown'

@@ -1,13 +1,17 @@
-.Movie-Info-Box-Container {
+@import url(https://fonts.googleapis.com/css?family=Roboto);@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext);.Movie-Info-Box-Container {
   display: flex;
   flex-direction: row;
   align-items: center;
-  box-shadow: 0 3px 5px #888888;
-  padding-top: 10px;
-  height: 100%; }
+  padding: 10px;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: white;
+  transition: all 0.2s ease-in-out; }
+  .Movie-Info-Box-Container:hover {
+    transform: scale(1.05); }
   .Movie-Info-Box-Container h2 {
     margin: 0;
-    color: #440381; }
+    color: linear-gradient(180deg, #311b92, #b388ff); }
   .Movie-Info-Box-Container .Movie-Poster {
     width: 100px;
     min-width: 100px;
@@ -28,7 +32,10 @@
     padding-top: 10px;
     width: 100%; }
     .Movie-Info-Box-Container .MovieRatingContainer p {
-      color: #da4167; }
+      font-size: 1.3em;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 900;
+      color: #1de9b6; }
     .Movie-Info-Box-Container .MovieRatingContainer .MovieRatingBox {
       display: flex;
       flex-direction: column;
@@ -41,8 +48,9 @@
   flex-direction: column;
   justify-content: flex-start;
   overflow-y: scroll;
-  background: linear-gradient(135deg, #e8d7f1, white);
-  max-width: 350px; }
+  max-width: 400px;
+  height: 100%;
+  padding: 0 10px; }
   #MovieContainer p {
     font-family: Roboto;
     display: flex;
@@ -54,13 +62,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-bottom-style: solid;
-    border-color: #c9c9c9;
     width: 100%;
-    max-width: 350px;
-    border-width: 1px;
-    padding: 15px 0;
-    box-shadow: 0 3px 5px #888888; }
+    padding-bottom: 10px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: white;
+    margin-bottom: 10px; }
     #MovieContainer #MovieContainerSearch #MovieInputs {
       height: 120px;
       transition: height 1s, opacity 0.3s; }
@@ -71,16 +78,9 @@
       align-items: flex-end;
       height: 100px;
       transition: height 0.6s, opacity 0.3s; }
-      #MovieContainer #MovieContainerSearch #MovieHeader p {
-        font-size: 2em;
-        font-family: Lucida Console;
-        color: #440381;
-        margin: 10px 0;
-        padding-left: 10px;
-        transition: height 0.6s, width 0.6s; }
       #MovieContainer #MovieContainerSearch #MovieHeader img {
-        width: 75px;
-        height: 75px;
+        width: auto;
+        height: 60px;
         transition: height 0.6s, width 0.6s; }
     #MovieContainer #MovieContainerSearch #MovieHeader .scroll {
       transition: height 1s, opacity 0.3s;
@@ -134,8 +134,11 @@
   padding: 0;
   font-family: sans-serif;
   overflow-y: scroll;
+  min-height: 450px;
+  max-height: 450px;
+  background: linear-gradient(180deg, #651fff, #b388ff);
   /* Added body dimensions */ }
   .App p {
     font-family: sans-serif; }
-body{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:start;justify-content:flex-start;height:400px;width:350px}
+body{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:start;justify-content:flex-start;overflow-y:scroll;max-height:400px;width:350px}
 /*# sourceMappingURL=style.css.map*/
