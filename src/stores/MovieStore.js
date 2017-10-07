@@ -21,7 +21,7 @@ class MovieStore {
 
   getTMDBMovie(title) {
     return new Promise((resolve, reject) => {
-      fetch(`${SourceStore.TMBD.apiLink + title}`)
+      fetch(`${SourceStore.TMDB.apiSearch + title}`)
         .then(results => {
           return results.json()
         })
@@ -54,28 +54,23 @@ class MovieStore {
   }
 
   //TODO: I have no idea if this works but it should work
-  getMedia(id, type) {
-    let mediaType = 'movie'
-    switch (type) {
-      case 'tv':
-        mediaType = 'tv'
-        break
-      default:
-        break
+  getMedia(id, mediaType) {
+    if (id && mediaType) {
+      return new Promise((resolve, reject) => {
+        fetch(
+          `https://api.themoviedb.org/3/${mediaType}/${id}?api_key=${SourceStore
+            .TMDB.apiKey}&language=en-US`
+        )
+          .then(results => {
+            return results.json()
+          })
+          .then(data => {
+            console.log(data)
+          })
+      })
+    } else {
+      console.log("didn't have media type or id: ", mediaType, id)
     }
-
-    return new Promise((resolve, reject) => {
-      fetch(
-        `https://api.themoviedb.org/3/${mediaType}/${id}?api_key=${SourceStore
-          .TMDB.apiKey}&language=en-US`
-      )
-        .then(results => {
-          return results.json()
-        })
-        .then(data => {
-          console.log(data)
-        })
-    })
   }
 
   //

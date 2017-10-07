@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { MovieStore } from 'stores'
 import { object } from 'prop-types'
 
 import './styles/MovieInfoBox.scss'
@@ -15,6 +16,11 @@ export default class MovieInfoBox extends Component {
     return 'unknown'
   }
 
+  handleGetMediaLink = () => {
+    const { movie } = this.props
+    MovieStore.getMedia(movie.id, movie.media_type)
+  }
+
   render() {
     const { movie } = this.props
     const date = movie.release_date ? movie.release_date : movie.first_air_date
@@ -28,7 +34,12 @@ export default class MovieInfoBox extends Component {
           alt="movie poster"
         />
         <div className="Movie-Info">
-          <h2>{`${name} (${this.handleGetYear(date)})`}</h2>
+          <a
+            href={`https://www.themoviedb.org/${movie.media_type}/${movie.id}`}
+            target="_blank"
+            rel="noopener">
+            <h2>{`${name} (${this.handleGetYear(date)})`}</h2>
+          </a>
           <div className="MovieRatingContainer">
             <div className="MovieRatingBox">
               <p>TMDB:</p>
