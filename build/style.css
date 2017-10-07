@@ -9,6 +9,10 @@
   transition: all 0.2s ease-in-out; }
   .Movie-Info-Box-Container:hover {
     transform: scale(1.05); }
+  .Movie-Info-Box-Container a {
+    transition: all 0.3s ease 0s; }
+    .Movie-Info-Box-Container a:hover {
+      color: #d81b60; }
   .Movie-Info-Box-Container h2 {
     margin: 0;
     color: linear-gradient(180deg, #311b92, #b388ff); }
@@ -67,33 +71,22 @@
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: white;
-    margin-bottom: 10px; }
-    #MovieContainer #MovieContainerSearch #MovieInputs {
-      height: 120px;
-      transition: height 1s, opacity 0.3s; }
+    margin-bottom: 10px;
+    animation: border-fade-in 2s; }
     #MovieContainer #MovieContainerSearch #MovieHeader {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: flex-end;
       height: 100px;
-      transition: height 0.6s, opacity 0.3s; }
+      animation: fade-in 1.3s;
+      transition: all 0.1s ease-in-out; }
       #MovieContainer #MovieContainerSearch #MovieHeader img {
         width: auto;
-        height: 60px;
-        transition: height 0.6s, width 0.6s; }
-    #MovieContainer #MovieContainerSearch #MovieHeader .scroll {
-      transition: height 1s, opacity 0.3s;
-      height: 70px; }
-      #MovieContainer #MovieContainerSearch #MovieHeader .scroll img {
-        width: 55px;
-        height: 55px; }
-      #MovieContainer #MovieContainerSearch #MovieHeader .scroll p {
-        font-size: 1.5em; }
-    #MovieContainer #MovieContainerSearch #MovieInputs .scroll {
-      transition: height 2s, opacity 0.5s;
-      opacity: 0;
-      height: 0; }
+        height: 60px; }
+    #MovieContainer #MovieContainerSearch #MovieInputs {
+      height: 120px;
+      animation: fade-in-two 2s; }
     #MovieContainer #MovieContainerSearch #MovieButton {
       cursor: pointer;
       display: flex;
@@ -128,6 +121,38 @@
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+  40% {
+    opacity: 1;
+    transform: scale(1.15); }
+  100% {
+    transform: scale(1);
+    opacity: 1; } }
+
+@keyframes fade-in-two {
+  0% {
+    opacity: 0; }
+  66% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes border-fade-in {
+  0% {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: transparent; }
+  66% {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: transparent; }
+  100% {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: white; } }
 .App {
   text-align: center;
   margin: 0;
