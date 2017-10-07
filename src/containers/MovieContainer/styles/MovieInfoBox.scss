@@ -9,14 +9,13 @@
   border-bottom-style: solid;
   border-width: 1px;
   border-color: white;
-  transition: all 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 
   &:hover {
     transform: scale(1.05);
   }
 
   a {
-    transition: all 0.3s ease 0s;
     &:hover {
       color: #ad1457;
     }

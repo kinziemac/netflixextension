@@ -6,13 +6,11 @@
   border-bottom-style: solid;
   border-width: 1px;
   border-color: white;
-  transition: all 0.2s ease-in-out; }
+  transition: transform 0.2s ease-in-out; }
   .Movie-Info-Box-Container:hover {
     transform: scale(1.05); }
-  .Movie-Info-Box-Container a {
-    transition: all 0.3s ease 0s; }
-    .Movie-Info-Box-Container a:hover {
-      color: #ad1457; }
+  .Movie-Info-Box-Container a:hover {
+    color: #ad1457; }
   .Movie-Info-Box-Container h2 {
     margin: 0;
     color: linear-gradient(180deg, #311b92, #b388ff); }
@@ -67,39 +65,39 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: white;
     margin-bottom: 10px;
-    animation: border-fade-in 1.6s; }
+    animation: border-fade-in 1.7s; }
     #MovieContainer #MovieContainerSearch #MovieHeader {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: flex-end;
       height: 100px;
-      animation: fade-in 1.3s;
-      transition: all 0.1s ease-in-out; }
+      animation: fade-in 1.3s; }
       #MovieContainer #MovieContainerSearch #MovieHeader img {
         width: auto;
         height: 60px; }
     #MovieContainer #MovieContainerSearch #MovieInputs {
-      height: 120px;
-      animation: fade-in-two 1.6s; }
+      animation: fade-in-two 1.5s; }
     #MovieContainer #MovieContainerSearch #MovieButton {
       cursor: pointer;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      margin-top: 20px;
-      width: 150px;
+      margin-top: 16px;
+      margin-bottom: 18px;
+      width: 170px;
       height: 25px;
       border-radius: 4px;
       background-color: #440381;
       color: white;
-      transition: all 0.7s ease 0s; }
+      transition: all 0.7s ease 0s;
+      animation: fade-in-two 1.6s; }
       #MovieContainer #MovieContainerSearch #MovieButton:hover {
         background-color: #832161; }
       #MovieContainer #MovieContainerSearch #MovieButton p {
@@ -166,4 +164,4 @@
   .App p {
     font-family: sans-serif; }
 body{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:start;justify-content:flex-start;overflow-y:scroll;max-height:400px;width:350px;margin:0;padding:0}
-/*# sourceMappingURL=main.233e0862.css.map*/
+/*# sourceMappingURL=main.0cb25580.css.map*/

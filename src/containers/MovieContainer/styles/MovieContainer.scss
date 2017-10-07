@@ -29,7 +29,7 @@
     border-bottom-width: 1px;
     border-bottom-color: white;
     margin-bottom: 10px;
-    animation: border-fade-in 1.9s;
+    animation: border-fade-in 1.7s;
 
     #MovieHeader {
       display: flex;
@@ -63,7 +63,7 @@
       background-color: $INDIGO_BLUE;
       color: white;
       transition: all 0.7s ease 0s;
-      animation: fade-in-two 1.7s;
+      animation: fade-in-two 1.6s;
 
       &:hover {
         background-color: $RASBERRY_RED;
